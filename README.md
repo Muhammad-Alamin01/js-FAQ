@@ -3,3 +3,4 @@
 * function
 * callback function
 * arguments
+* event bubble

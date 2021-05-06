@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubble</title>
+</head>
+
+<body>
+
+    <div id="container">
+        <h3>My List</h3>
+        <ul id="myList">
+            <li class="item">loerm ipsum dolar</li>
+            <li class="item">Turki</li>
+            <li class="item">Bangladesh</li>
+            <li class="item">Euro</li>
+            <li class="item">Afganistan</li>
+        </ul>
+        <button id="addNew">Add Item</button>
+    </div>
+
+
+
+    <script>
+
+        document.getElementById('addNew').addEventListener('click', function (e) {
+            let itemParent = document.getElementById('myList');
+            let newItem = document.createElement('li');
+            newItem.innerText = 'Brand new Item';
+            itemParent.appendChild(newItem);
+        });
+
+
+        document.getElementById('myList').addEventListener('click', function (e) {
+            console.log(this, event.target);
+            e.target.parentNode.removeChild(e.target);
+        });
+
+    </script>
+</body>
+
+</html>
